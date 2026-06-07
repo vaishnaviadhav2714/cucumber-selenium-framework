@@ -2,54 +2,80 @@
 
 ## About the Project
 
-This project is a UI automation testing framework developed for the SauceDemo application using Selenium WebDriver, Java, Cucumber BDD, TestNG, and Maven.
+This project is a UI Automation Testing Framework developed for the SauceDemo application using Selenium WebDriver, Java, Cucumber BDD, TestNG, and Maven.
 
-The framework follows the Page Object Model (POM) design pattern to ensure better maintainability, reusability, and scalability of test scripts.
+The framework follows the Page Object Model (POM) design pattern to provide better maintainability, reusability, and scalability of automated test scripts.
+
+The framework supports configuration-based browser execution and automates key e-commerce user workflows such as login, product selection, cart management, checkout, logout, and product sorting validation.
 
 ---
 
 ## Tech Stack
 
-- Java  
-- Selenium WebDriver  
-- Cucumber BDD  
-- TestNG  
-- Maven  
-- WebDriverManager  
+* Java
+* Selenium WebDriver
+* Cucumber BDD
+* TestNG
+* Maven
+* WebDriverManager
+* Extent Reports
 
 ---
 
 ## Framework Features
 
-- Page Object Model (POM) design pattern  
-- Reusable utility methods  
-- Config-driven framework  
-- DriverFactory implementation  
-- Hooks for setup and teardown  
-- Scenario Outline for data-driven testing  
-- End-to-end e-commerce workflow automation  
+* Page Object Model (POM) Design Pattern
+* DriverFactory Implementation
+* Config-Driven Framework
+* Browser Configuration through config.properties
+* Cross-Browser Support
+
+  * Chrome
+  * Edge
+  * Firefox
+* Reusable Utility Methods
+* Hooks for Setup and Teardown
+* Scenario Outline for Data-Driven Testing
+* Extent Reporting
+* End-to-End E-Commerce Workflow Automation
 
 ---
 
 ## Test Scenarios Covered
 
 ### Login Module
-- Valid login functionality  
-- Invalid login validation  
-- Data-driven login testing  
+
+* Valid Login Verification
+* Invalid Login Validation
+* Locked-Out User Validation
+* Data-Driven Login Testing Using Scenario Outline
 
 ### Product Module
-- Product listing verification  
-- Add product to cart  
-- Cart badge validation  
+
+* Product Listing Verification
+* Add Product to Cart
+* Cart Badge Validation
+* Product Sorting Validation
+
+  * Name (A to Z)
+  * Name (Z to A)
+  * Price (Low to High)
+  * Price (High to Low)
 
 ### Cart Module
-- Verify added products in cart  
+
+* Verify Added Products in Cart
+* Verify Cart Item Count
 
 ### Checkout Module
-- Enter user details  
-- Complete order process  
-- Validate order confirmation  
+
+* Enter Checkout Information
+* Complete Checkout Process
+* Verify Order Confirmation
+
+### Logout Module
+
+* Verify User Logout Functionality
 
 ---
 
@@ -72,40 +98,81 @@ src/test/resources
 
 ---
 
+## Configuration
+
+The browser can be changed directly from the config.properties file:
+
+browser=chrome
+
+Supported values:
+
+* chrome
+* edge
+* firefox
+
+Example:
+
+browser=edge
+
+No code changes are required to execute tests on a different browser.
+
+---
+
 ## How to Run the Project
 
-### 1. Clone the repository
-git clone https://github.com/your-username/cucumber-selenium-framework.git
+### Clone Repository
 
-### 2. Import project
-Import as a Maven project in Eclipse or IntelliJ
+git clone https://github.com/your-username/saucedemo-ui-automation.git
 
-### 3. Install dependencies
+### Import Project
+
+Import the project as a Maven Project in Eclipse or IntelliJ IDEA.
+
+### Install Dependencies
+
 mvn clean install
 
-### 4. Run tests
+### Execute Tests
+
 mvn test
 
-OR execute TestRunner class directly
+OR
+
+Run the TestRunner class directly from the IDE.
 
 ---
 
 ## Reports
 
-- Cucumber Reports (if configured)
-- TestNG reports available in target/surefire-reports
+### Extent Reports
+
+Generated after execution for detailed test reporting.
+
+### TestNG Reports
+
+Available under:
+
+target/surefire-reports
 
 ---
 
-## Future Improvements
+## Future Enhancements
 
-- Jenkins CI/CD integration  
-- Cross-browser testing  
-- Parallel execution  
-- Selenium Grid support
-  
+* Jenkins CI/CD Integration
+* Selenium Grid Execution
+* Parallel Test Execution
+
 ---
 
 ## Author
+QA Automation Engineer
 
-Automation Tester – Selenium | Java | Cucumber | TestNG
+Skills:
+
+* Selenium WebDriver
+* Java
+* Cucumber BDD
+* TestNG
+* Maven
+* Automation Framework Development
+
