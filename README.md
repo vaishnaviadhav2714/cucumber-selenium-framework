@@ -1,115 +1,225 @@
-# SauceDemo Automation Framework
+# SauceDemo UI Automation Framework
+
+
 
 ## About the Project
 
-This project is a UI automation framework developed for the SauceDemo application using Selenium WebDriver, Java, Cucumber BDD, and TestNG.
 
-The framework follows the Page Object Model (POM) design pattern and focuses on creating reusable, maintainable, and scalable automation tests.
+
+This project is a UI automation testing framework developed for the SauceDemo application using Selenium WebDriver, Java, Cucumber BDD, TestNG, and Maven.
+
+
+
+The framework follows the Page Object Model (POM) design pattern to ensure better maintainability, reusability, and scalability of test scripts.
+
+
+
+---
+
+
 
 ## Tech Stack
 
-- Java
-- Selenium WebDriver
-- Cucumber BDD
-- TestNG
-- Maven
-- WebDriverManager
-- Extent Reports
-- Git
+
+
+- Java  
+
+- Selenium WebDriver  
+
+- Cucumber BDD  
+
+- TestNG  
+
+- Maven  
+
+- WebDriverManager  
+
+
+
+---
+
+
 
 ## Framework Features
 
-- Page Object Model (POM)
-- Reusable BasePage methods
-- Config-driven test execution
-- DriverFactory implementation using ThreadLocal
-- FrameworkConstants for framework-level configurations
-- Cucumber feature files and step definitions
-- Hooks for test setup and teardown
-- Extent Reporting
-- End-to-end checkout workflow automation
 
-## Automated Scenarios
 
-### Login
+- Page Object Model (POM) design pattern  
 
-- Valid user login
-- Multiple user validation using Scenario Outline
-- Invalid login validation
+- Reusable utility methods  
 
-### Products
+- Config-driven framework  
 
-- Verify products page
-- Add products to cart
-- Validate cart badge count
+- DriverFactory implementation  
 
-### Cart
+- Hooks for setup and teardown  
 
-- Verify products added to cart
+- Scenario Outline for data-driven testing  
 
-### Checkout
+- End-to-end e-commerce workflow automation  
 
-- Enter checkout information
-- Complete order flow
-- Validate successful order placement
+
+
+---
+
+
+
+## Test Scenarios Covered
+
+
+
+### Login Module
+
+- Valid login functionality  
+
+- Invalid login validation  
+
+- Data-driven login testing  
+
+
+
+### Product Module
+
+- Product listing verification  
+
+- Add product to cart  
+
+- Cart badge validation  
+
+
+
+### Cart Module
+
+- Verify added products in cart  
+
+
+
+### Checkout Module
+
+- Enter user details  
+
+- Complete order process  
+
+- Validate order confirmation  
+
+
+
+---
+
+
 
 ## Project Structure
 
+
+
 src/test/java
 
-├── pages
-│   ├── BasePage
-│   ├── LoginPage
-│   ├── ProductsPage
-│   ├── CartPage
-│   ├── CheckoutInformationPage
-│   ├── CheckoutOverviewPage
-│   └── CheckoutCompletePage
-│
-├── stepdefinitions
-│   ├── LoginStepDefinition
-│   ├── ProductsStepDefinition
-│   ├── CartStepDefinition
-│   └── CheckoutStepDefinition
-│
-├── hooks
-│   └── Hooks
-│
-├── factory
-│   └── DriverFactory
-│
-├── constants
-│   └── FrameworkConstants
-│
-├── utils
-│   ├── ConfigReader
-│   ├── ExtentManager
-│   └── ExtentTestManager
-│
-└── runners
-    └── TestRunner
+
+
+├── pages  
+
+├── stepdefinitions  
+
+├── hooks  
+
+├── factory  
+
+├── constants  
+
+├── utils  
+
+└── runners  
+
+
 
 src/test/resources
 
-├── features
-│   ├── login.feature
-│   ├── products.feature
-│   ├── cart.feature
-│   └── checkout.feature
-│
-└── config
-    └── config.properties
 
-## Execution
 
-Run all tests:
+├── features  
+
+└── config  
+
+
+
+---
+
+
+
+## How to Run the Project
+
+
+
+### 1. Clone the repository
+
+git clone https://github.com/your-username/cucumber-selenium-framework.git
+
+
+
+### 2. Import project
+
+Import as a Maven project in Eclipse or IntelliJ
+
+
+
+### 3. Install dependencies
+
+mvn clean install
+
+
+
+### 4. Run tests
 
 mvn test
 
+
+
+OR execute TestRunner class directly
+
+
+
+---
+
+
+
+## Reports
+
+
+
+- Cucumber Reports (if configured)
+
+- TestNG reports available in target/surefire-reports
+
+
+
+---
+
+
+
 ## Future Improvements
 
-- Parallel execution using TestNG
-- Cross-browser execution
-- Jenkins CI/CD integration
-- Selenium Grid support
-- Docker executionThis project was created to demonstrate a scalable Selenium automation framework using Java, Cucumber BDD, TestNG, and Page Object Model design principles.This project was created to demonstrate a scalable Selenium automation framework using Java, Cucumber BDD, TestNG, and Page Object Model design principles.
+
+
+- Jenkins CI/CD integration  
+
+- Cross-browser testing  
+
+- Parallel execution  
+
+- Selenium Grid support  
+
+
+
+
+
+
+
+---
+
+
+
+## Author
+
+
+
+Automation Tester – Selenium | Java | Cucumber | TestNG

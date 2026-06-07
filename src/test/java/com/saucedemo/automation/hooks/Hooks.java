@@ -12,29 +12,40 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class Hooks {
-	  private static ExtentReports extent;
-	  private ExtentTest test;
-	  @Before
-	    public void setUp() {
-	        DriverFactory.initializeDriver();
-	        DriverFactory.getDriver()
-	            .get(ConfigReader.getBaseUrl());
-	        extent = ExtentManager.getExtentReports();
-	        test = extent.createTest("Scenario Execution");
 
-	        ExtentTestManager.setTest(test);
-	    }
+    private ExtentReports extent;
+    private ExtentTest test;
+     
+    @Before
+    public void setUp(Scenario scenario) {
 
-	  @After
-	  public void tearDown(Scenario scenario) {
+        DriverFactory.initializeDriver(ConfigReader.getBrowser());
 
-	      if (scenario.isFailed()) {
-	          ExtentTestManager.getTest().fail("Scenario Failed");
-	      } else {
-	          ExtentTestManager.getTest().pass("Scenario Passed");
-	      }
+        DriverFactory.getDriver().get(ConfigReader.getBaseUrl());
 
-	      DriverFactory.quitDriver();
-	      extent.flush();
-	  }
-	}
+        extent = ExtentManager.getExtentReports();
+        test = extent.createTest(scenario.getName());
+
+        ExtentTestManager.setTest(test);
+    }
+    
+    @After
+    public void tearDown(Scenario scenario) {
+
+        ExtentTest test = ExtentTestManager.getTest();
+
+        if (test != null) {
+            if (scenario.isFailed()) {
+                test.fail("Scenario Failed");
+            } else {
+                test.pass("Scenario Passed");
+            }
+        }
+
+        DriverFactory.quitDriver();
+
+        if (extent != null) {
+            extent.flush();
+        }
+    }
+}
