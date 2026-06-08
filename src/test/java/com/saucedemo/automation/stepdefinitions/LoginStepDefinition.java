@@ -44,6 +44,7 @@ public class LoginStepDefinition {
         Assert.assertTrue(
                 productsPage.isProductPageDisplayed()
         );
+        
     }
 
     @Then("User should see locked out user error message")
