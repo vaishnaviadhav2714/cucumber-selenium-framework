@@ -4,9 +4,9 @@
 
 This project is a UI Automation Testing Framework developed for the SauceDemo application using Selenium WebDriver, Java, Cucumber BDD, TestNG, and Maven.
 
-The framework follows the Page Object Model (POM) design pattern to provide better maintainability, reusability, and scalability of automated test scripts.
+The framework follows the Page Object Model (POM) design pattern to improve maintainability, reusability, and scalability of automated test scripts.
 
-The framework supports configuration-based browser execution and automates key e-commerce user workflows such as login, product selection, cart management, checkout, logout, and product sorting validation.
+The framework automates key e-commerce workflows including login, product selection, cart validation, checkout, logout, and product sorting functionality.
 
 ---
 
@@ -26,24 +26,22 @@ The framework supports configuration-based browser execution and automates key e
 
 ## Framework Features
 
-* Page Object Model (POM) Design Pattern
-* DriverFactory Implementation
-* Config-Driven Framework
-* Browser Configuration through config.properties
-* Cross-Browser Support
+* Page Object Model (POM)
+* DriverFactory for browser management
+* Configuration-driven framework using properties file
+* Cross-browser execution support
+
   * Chrome
   * Edge
   * Firefox
-* Reusable Utility Methods
-* Hooks for Setup and Teardown
-* Scenario Outline for Data-Driven Testing
-* Extent Reporting
-* Cucumber Reporting
-* Screenshot Capture on Test Failure
-* Jenkins Freestyle Job Integration
-* Jenkins Pipeline Integration
-* Scheduled Test Execution using Jenkins
-* End-to-End E-Commerce Workflow Automation
+* Reusable utility methods
+* Cucumber Hooks for setup and teardown
+* Scenario Outline for data-driven testing
+* Extent Reports
+* Cucumber Reports
+* Screenshot capture on test failure
+* End-to-end e-commerce workflow automation
+* Jenkins integration for automated execution
 
 ---
 
@@ -54,7 +52,7 @@ The framework supports configuration-based browser execution and automates key e
 * Valid Login Verification
 * Invalid Login Validation
 * Locked-Out User Validation
-* Data-Driven Login Testing Using Scenario Outline
+* Data-Driven Login Testing
 
 ### Product Module
 
@@ -62,6 +60,7 @@ The framework supports configuration-based browser execution and automates key e
 * Add Product to Cart
 * Cart Badge Validation
 * Product Sorting Validation
+
   * Name (A to Z)
   * Name (Z to A)
   * Price (Low to High)
@@ -108,25 +107,19 @@ src/test/resources
 
 ## Configuration
 
-The browser can be changed directly from the `config.properties` file:
+The browser can be changed from the `config.properties` file.
+
+Example:
 
 ```properties
 browser=chrome
 ```
 
-Supported values:
+Supported browsers:
 
 * chrome
 * edge
 * firefox
-
-Example:
-
-```properties
-browser=edge
-```
-
-No code changes are required to execute tests on a different browser.
 
 ---
 
@@ -137,10 +130,6 @@ No code changes are required to execute tests on a different browser.
 ```bash
 git clone https://github.com/vaishnaviadhav2714/cucumber-selenium-framework.git
 ```
-
-### Import Project
-
-Import the project as a Maven Project in Eclipse or IntelliJ IDEA.
 
 ### Install Dependencies
 
@@ -154,17 +143,19 @@ mvn clean install
 mvn test
 ```
 
-OR
-
-Run the `TestRunner` class directly from the IDE.
+Or run the TestRunner class directly from Eclipse or IntelliJ.
 
 ---
 
 ## Reports
 
-### Extent Reports
+### Extent Report
 
-Generated after execution for detailed reporting including screenshots for failed scenarios.
+Generated after execution and includes:
+
+* Test execution summary
+* Pass/Fail status
+* Failure screenshots
 
 Location:
 
@@ -172,9 +163,9 @@ Location:
 target/extent-report.html
 ```
 
-### Cucumber Reports
+### Cucumber Report
 
-Generated after execution to provide BDD scenario-level results.
+Generated after execution to provide scenario-level results.
 
 Location:
 
@@ -194,35 +185,39 @@ target/surefire-reports
 
 ## Jenkins Integration
 
-The framework is integrated with Jenkins using:
+The framework is integrated with Jenkins for automated test execution.
+
+Current Jenkins setup includes:
 
 * Freestyle Job
 * Pipeline Job
+* GitHub Repository Integration
 * Maven Build Execution
-* GitHub Source Code Integration
-* Scheduled Execution using Cron Expressions
+* Scheduled Test Execution
 
-Pipeline Stages:
+The pipeline performs the following steps:
 
-1. Checkout Source Code
-2. Build & Execute Tests
-3. Archive Reports
+1. Checkout latest code from GitHub
+2. Execute automation tests using Maven
+3. Generate execution reports
+4. Archive build artifacts
+
+Tests can be triggered manually or through scheduled execution.
 
 ---
 
 ## Future Enhancements
 
-* Selenium Grid Execution
 * Parallel Test Execution
-* GitHub Webhook Integration for Automatic Builds
-
+* Selenium Grid Integration
+  
 ---
 
 ## Author
 
-**Vaishnavi Adhav**
+Vaishnavi Adhav
 
-QA Automation Engineer
+SDET II (Software Development Engineer in Test)
 
 ### Skills
 
