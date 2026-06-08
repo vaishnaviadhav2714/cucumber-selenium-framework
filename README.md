@@ -1,114 +1,4 @@
 # SauceDemo UI Automation Framework
-<<<<<<< HEAD
-
-
-
-## About the Project
-
-
-
-This project is a UI automation testing framework developed for the SauceDemo application using Selenium WebDriver, Java, Cucumber BDD, TestNG, and Maven.
-
-
-
-The framework follows the Page Object Model (POM) design pattern to ensure better maintainability, reusability, and scalability of test scripts.
-
-
-
----
-
-
-
-## Tech Stack
-
-
-
-- Java  
-
-- Selenium WebDriver  
-
-- Cucumber BDD  
-
-- TestNG  
-
-- Maven  
-
-- WebDriverManager  
-
-
-
----
-
-
-
-## Framework Features
-
-
-
-- Page Object Model (POM) design pattern  
-
-- Reusable utility methods  
-
-- Config-driven framework  
-
-- DriverFactory implementation  
-
-- Hooks for setup and teardown  
-
-- Scenario Outline for data-driven testing  
-
-- End-to-end e-commerce workflow automation  
-
-
-
----
-
-
-
-## Test Scenarios Covered
-
-
-
-### Login Module
-
-- Valid login functionality  
-
-- Invalid login validation  
-
-- Data-driven login testing  
-
-
-
-### Product Module
-
-- Product listing verification  
-
-- Add product to cart  
-
-- Cart badge validation  
-
-
-
-### Cart Module
-
-- Verify added products in cart  
-
-
-
-### Checkout Module
-
-- Enter user details  
-
-- Complete order process  
-
-- Validate order confirmation  
-
-
-
----
-
-
-=======
 
 ## About the Project
 
@@ -129,6 +19,8 @@ The framework supports configuration-based browser execution and automates key e
 * Maven
 * WebDriverManager
 * Extent Reports
+* Jenkins
+* Git & GitHub
 
 ---
 
@@ -139,7 +31,6 @@ The framework supports configuration-based browser execution and automates key e
 * Config-Driven Framework
 * Browser Configuration through config.properties
 * Cross-Browser Support
-
   * Chrome
   * Edge
   * Firefox
@@ -147,6 +38,11 @@ The framework supports configuration-based browser execution and automates key e
 * Hooks for Setup and Teardown
 * Scenario Outline for Data-Driven Testing
 * Extent Reporting
+* Cucumber Reporting
+* Screenshot Capture on Test Failure
+* Jenkins Freestyle Job Integration
+* Jenkins Pipeline Integration
+* Scheduled Test Execution using Jenkins
 * End-to-End E-Commerce Workflow Automation
 
 ---
@@ -166,7 +62,6 @@ The framework supports configuration-based browser execution and automates key e
 * Add Product to Cart
 * Cart Badge Validation
 * Product Sorting Validation
-
   * Name (A to Z)
   * Name (Z to A)
   * Price (Low to High)
@@ -188,145 +83,36 @@ The framework supports configuration-based browser execution and automates key e
 * Verify User Logout Functionality
 
 ---
->>>>>>> 76cbc8662c4f2b62b8ab66cf58234e6e86bb162d
 
 ## Project Structure
 
-
-
+```text
 src/test/java
 
-<<<<<<< HEAD
-
-
-├── pages  
-
-├── stepdefinitions  
-
-├── hooks  
-
-├── factory  
-
-├── constants  
-
-├── utils  
-
-└── runners  
-
-
+├── pages
+├── stepdefinitions
+├── hooks
+├── factory
+├── constants
+├── reports
+├── utils
+└── runners
 
 src/test/resources
 
-
-
-├── features  
-
-└── config  
-
-
-
----
-
-
-
-## How to Run the Project
-
-
-
-### 1. Clone the repository
-
-git clone https://github.com/your-username/cucumber-selenium-framework.git
-
-
-
-### 2. Import project
-
-Import as a Maven project in Eclipse or IntelliJ
-
-
-
-### 3. Install dependencies
-
-mvn clean install
-
-
-
-### 4. Run tests
-
-mvn test
-
-
-
-OR execute TestRunner class directly
-
-
-
----
-
-
-
-## Reports
-
-
-
-- Cucumber Reports (if configured)
-
-- TestNG reports available in target/surefire-reports
-
-
-
----
-
-
-
-## Future Improvements
-
-
-
-- Jenkins CI/CD integration  
-
-- Cross-browser testing  
-
-- Parallel execution  
-
-- Selenium Grid support  
-
-
-
-
-
-
-
----
-
-
-
-## Author
-
-
-
-Automation Tester – Selenium | Java | Cucumber | TestNG
-=======
-├── pages  
-├── stepdefinitions  
-├── hooks  
-├── factory  
-├── constants  
-├── utils  
-└── runners  
-
-src/test/resources
-
-├── features  
-└── config  
+├── features
+└── config
+```
 
 ---
 
 ## Configuration
 
-The browser can be changed directly from the config.properties file:
+The browser can be changed directly from the `config.properties` file:
 
+```properties
 browser=chrome
+```
 
 Supported values:
 
@@ -336,7 +122,9 @@ Supported values:
 
 Example:
 
+```properties
 browser=edge
+```
 
 No code changes are required to execute tests on a different browser.
 
@@ -346,7 +134,9 @@ No code changes are required to execute tests on a different browser.
 
 ### Clone Repository
 
-git clone https://github.com/your-username/saucedemo-ui-automation.git
+```bash
+git clone https://github.com/vaishnaviadhav2714/cucumber-selenium-framework.git
+```
 
 ### Import Project
 
@@ -354,15 +144,19 @@ Import the project as a Maven Project in Eclipse or IntelliJ IDEA.
 
 ### Install Dependencies
 
+```bash
 mvn clean install
+```
 
 ### Execute Tests
 
+```bash
 mvn test
+```
 
 OR
 
-Run the TestRunner class directly from the IDE.
+Run the `TestRunner` class directly from the IDE.
 
 ---
 
@@ -370,34 +164,73 @@ Run the TestRunner class directly from the IDE.
 
 ### Extent Reports
 
-Generated after execution for detailed test reporting.
+Generated after execution for detailed reporting including screenshots for failed scenarios.
+
+Location:
+
+```text
+target/extent-report.html
+```
+
+### Cucumber Reports
+
+Generated after execution to provide BDD scenario-level results.
+
+Location:
+
+```text
+target/cucumber-report.html
+```
 
 ### TestNG Reports
 
 Available under:
 
+```text
 target/surefire-reports
+```
+
+---
+
+## Jenkins Integration
+
+The framework is integrated with Jenkins using:
+
+* Freestyle Job
+* Pipeline Job
+* Maven Build Execution
+* GitHub Source Code Integration
+* Scheduled Execution using Cron Expressions
+
+Pipeline Stages:
+
+1. Checkout Source Code
+2. Build & Execute Tests
+3. Archive Reports
 
 ---
 
 ## Future Enhancements
 
-* Jenkins CI/CD Integration
 * Selenium Grid Execution
 * Parallel Test Execution
+* GitHub Webhook Integration for Automatic Builds
 
 ---
 
 ## Author
+
+**Vaishnavi Adhav**
+
 QA Automation Engineer
 
-Skills:
+### Skills
 
 * Selenium WebDriver
 * Java
 * Cucumber BDD
 * TestNG
 * Maven
+* Jenkins
+* Git & GitHub
 * Automation Framework Development
-
->>>>>>> 76cbc8662c4f2b62b8ab66cf58234e6e86bb162d
